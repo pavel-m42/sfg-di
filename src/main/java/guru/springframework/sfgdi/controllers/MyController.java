@@ -4,7 +4,7 @@ import guru.springframework.sfgdi.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 /**
- * Created by Fhoenix on 2021/03/05.
+ * Created by jt on 12/26/19.
  */
 @Controller
 public class MyController {
@@ -15,7 +15,7 @@ public class MyController {
         this.greetingService = greetingService;
     }
 
-    public String sayHello() {
-        return  greetingService.sayGreeting();
+    public String sayHello(){
+        return greetingService.sayGreeting();
     }
 }

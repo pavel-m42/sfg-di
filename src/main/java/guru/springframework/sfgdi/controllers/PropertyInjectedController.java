@@ -6,15 +6,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
- * Created by Fhoenix on 2021/03/06.
+ * Created by jt on 12/26/19.
  */
 @Controller
 public class PropertyInjectedController {
+
+    @Qualifier("propertyInjectedGreetingService")
     @Autowired
-    @Qualifier("propertyGreetingService")
     public GreetingService greetingService;
 
-    public String getGreeting() {
+    public String getGreeting(){
         return greetingService.sayGreeting();
     }
+
 }

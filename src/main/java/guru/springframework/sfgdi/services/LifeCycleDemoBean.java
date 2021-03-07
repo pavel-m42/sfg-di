@@ -9,9 +9,6 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-/**
- * Created by Fhoenix on 2021/03/06.
- */
 @Component
 public class LifeCycleDemoBean implements InitializingBean, DisposableBean, BeanNameAware,
         BeanFactoryAware, ApplicationContextAware {
