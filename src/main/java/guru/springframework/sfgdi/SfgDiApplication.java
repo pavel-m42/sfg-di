@@ -1,10 +1,14 @@
 package guru.springframework.sfgdi;
 
+import guru.springframework.sfgdi.config.ConstructorConfig;
+import guru.springframework.sfgdi.config.SfgConfiguration;
 import guru.springframework.sfgdi.controllers.*;
+import guru.springframework.sfgdi.datasource.FakeDataSource;
 import guru.springframework.sfgdi.services.PrototypeBean;
 import guru.springframework.sfgdi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConstructorBinding;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -49,6 +53,15 @@ public class SfgDiApplication {
 
 		System.out.println(pb1.getMyScope());
 		System.out.println(pb2.getMyScope());
+
+		FakeDataSource fd = ctx.getBean(FakeDataSource.class);
+		System.out.println("Username: " + fd.getUsername());
+
+		SfgConfiguration sc = ctx.getBean(SfgConfiguration.class);
+		System.out.println("Username: " + sc.getUsername());
+
+		ConstructorConfig cc = ctx.getBean(ConstructorConfig.class);
+		System.out.println("Username: " + cc.getUsername());
 	}
 
 }
